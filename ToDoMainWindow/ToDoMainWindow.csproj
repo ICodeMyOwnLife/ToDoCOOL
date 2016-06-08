@@ -39,6 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.3.0-ALPHA159\lib\net45\System.Windows.Interactivity.dll</HintPath>
@@ -61,18 +62,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Compile Include="Helpers\TodoToBackgroundConverter.cs" />
+    <Compile Include="Views\Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Helpers\WarningLevelBrushes.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Helpers\WarningLevelBrush.cs" />
+    <Compile Include="Helpers\WarningLevelBrushList.cs" />
+    <Compile Include="Helpers\WarningLevelConfig.cs" />
+    <Page Include="Views\Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -103,6 +111,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\DotNet\CB.Model\CB.Model.Common\CB.Model.Common.csproj">
+      <Project>{33a5df99-1312-4023-a6ef-eabb9848f5a6}</Project>
+      <Name>CB.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\DotNet\CB.Model\CB.Model.Prism\CB.Model.Prism.csproj">
+      <Project>{6a52cae9-6f3e-4a20-96eb-0e6116a6709c}</Project>
+      <Name>CB.Model.Prism</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Libraries\DotNet\CB.Model\CB.Model.Serialization\CB.Model.Serialization.csproj">
+      <Project>{d1c79fd2-d8f3-4c20-8af6-c9d570f29d77}</Project>
+      <Name>CB.Model.Serialization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Libraries\DotNet\CB.WPF\CB.Wpf.Controls\CB.Wpf.Controls.csproj">
       <Project>{40ddc946-cd13-4734-990f-fbff6914652e}</Project>
       <Name>CB.Wpf.Controls</Name>
@@ -114,6 +134,14 @@
     <ProjectReference Include="..\..\..\..\Libraries\DotNet\CB.WPF\CB.WPF.Resources.MahApps\CB.WPF.Resources.MahApps.csproj">
       <Project>{88845a0d-9b1f-4d1a-92d3-0c8d97e4d747}</Project>
       <Name>CB.WPF.Resources.MahApps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TodoModels\TodoModels.csproj">
+      <Project>{6fcef31b-dbf0-4489-9b7c-c945d25c4418}</Project>
+      <Name>TodoModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TodoViewModels\TodoViewModels.csproj">
+      <Project>{a0944121-8b3c-4706-973e-7cb4972d381f}</Project>
+      <Name>TodoViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoMainWindow", "ToDoMainWindow\ToDoMainWindow.csproj", "{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}"
 EndProject
@@ -14,6 +14,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todos", "Todos\Todos.csproj", "{53321AF1-ACD2-48E4-AFF4-63731D410C24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainForm", "MainForm\MainForm.csproj", "{28F2C9C6-F381-4E5B-9239-2CD1CFAB0508}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoViewModels", "TodoViewModels\TodoViewModels.csproj", "{A0944121-8B3C-4706-973E-7CB4972D381F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CB.Model.Common", "..\..\..\Libraries\DotNet\CB.Model\CB.Model.Common\CB.Model.Common.csproj", "{33A5DF99-1312-4023-A6EF-EABB9848F5A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CB.Model.Prism", "..\..\..\Libraries\DotNet\CB.Model\CB.Model.Prism\CB.Model.Prism.csproj", "{6A52CAE9-6F3E-4A20-96EB-0E6116A6709C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoModels", "TodoModels\TodoModels.csproj", "{6FCEF31B-DBF0-4489-9B7C-C945D25C4418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CB.Model.Serialization", "..\..\..\Libraries\DotNet\CB.Model\CB.Model.Serialization\CB.Model.Serialization.csproj", "{D1C79FD2-D8F3-4C20-8AF6-C9D570F29D77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +55,26 @@ Global
 		{28F2C9C6-F381-4E5B-9239-2CD1CFAB0508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28F2C9C6-F381-4E5B-9239-2CD1CFAB0508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28F2C9C6-F381-4E5B-9239-2CD1CFAB0508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0944121-8B3C-4706-973E-7CB4972D381F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0944121-8B3C-4706-973E-7CB4972D381F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0944121-8B3C-4706-973E-7CB4972D381F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0944121-8B3C-4706-973E-7CB4972D381F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A5DF99-1312-4023-A6EF-EABB9848F5A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A5DF99-1312-4023-A6EF-EABB9848F5A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A5DF99-1312-4023-A6EF-EABB9848F5A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A5DF99-1312-4023-A6EF-EABB9848F5A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A52CAE9-6F3E-4A20-96EB-0E6116A6709C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A52CAE9-6F3E-4A20-96EB-0E6116A6709C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A52CAE9-6F3E-4A20-96EB-0E6116A6709C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A52CAE9-6F3E-4A20-96EB-0E6116A6709C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FCEF31B-DBF0-4489-9B7C-C945D25C4418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FCEF31B-DBF0-4489-9B7C-C945D25C4418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FCEF31B-DBF0-4489-9B7C-C945D25C4418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FCEF31B-DBF0-4489-9B7C-C945D25C4418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C79FD2-D8F3-4C20-8AF6-C9D570F29D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C79FD2-D8F3-4C20-8AF6-C9D570F29D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C79FD2-D8F3-4C20-8AF6-C9D570F29D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C79FD2-D8F3-4C20-8AF6-C9D570F29D77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
