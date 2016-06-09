@@ -8,6 +8,7 @@
                  xmlns:dvm="clr-namespace:TodoViewModels.Design;assembly=TodoViewModels"
                  xmlns:mdl="clr-namespace:TodoModels;assembly=TodoModels"
                  xmlns:helpers="clr-namespace:ToDoMainWindow.Helpers"
+                 xmlns:xaml="http://wpf.cb.com/xaml"
                  mc:Ignorable="d"
                  Title="Shell" Height="600" Width="800" Style="{StaticResource MetroWindowStyle}"
                  WindowStartupLocation="CenterScreen"
@@ -71,7 +72,9 @@
 
         <Grid Grid.Row="1">
             <DataGrid ItemsSource="{Binding Todos}" CanUserAddRows="True" AutoGenerateColumns="False"
-                      RowStyle="{StaticResource DataGridRow}">
+                      RowStyle="{StaticResource DataGridRow}"
+                      xaml:DataGridServices.ShowRowNumber="True"
+                      xaml:DataGridServices.StartRowNumber="1">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Content" SortMemberPath="Content"
                                             CellTemplate="{StaticResource ContentColumnTemplate}"
