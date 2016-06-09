@@ -9,6 +9,8 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
+            <Thickness x:Key="NormarMargin">8</Thickness>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
