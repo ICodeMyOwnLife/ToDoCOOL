@@ -1,0 +1,11 @@
+﻿<local:WarningLevelConfig xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                          xmlns:local="clr-namespace:ToDoMainWindow.Helpers;assembly=TodoMainWindow">
+    <local:WarningLevelConfig.DefaultBrush>
+        <local:WarningLevelBrush Content="Normal" Background="#CCE2F7D7" />
+    </local:WarningLevelConfig.DefaultBrush>
+
+    <local:WarningLevelBrush Content="Warning" Hours="0" Background="#7FFFD4D4" />
+    <local:WarningLevelBrush Content="Warning" Hours="2" Background="#7FF9F3C9" />
+    <local:WarningLevelBrush Content="Warning" Hours="24" Background="#7FDCD4FF" />
+</local:WarningLevelConfig>
