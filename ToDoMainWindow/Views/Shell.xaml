@@ -22,7 +22,7 @@
         <helpers:TodoToContentConverter x:Key="TodoToContentConverter" />
 
         <DataTemplate x:Key="ContentColumnTemplate" DataType="mdl:Todo">
-            <TextBlock Text="{Binding Content}" />
+            <TextBlock Text="{Binding Content}" Style="{StaticResource TextBlockStyle.Label}" />
         </DataTemplate>
 
         <DataTemplate x:Key="ContentEditingColumnTemplate" DataType="mdl:Todo">
@@ -30,7 +30,7 @@
         </DataTemplate>
 
         <DataTemplate x:Key="DeadlineColumnTemplate" DataType="mdl:Todo">
-            <TextBlock Text="{Binding Deadline, StringFormat={}{0:MM-dd-yyyy}}" />
+            <TextBlock Text="{Binding Deadline, StringFormat={}{0:MM-dd-yyyy}}" Style="{StaticResource TextBlockStyle.Label}" />
         </DataTemplate>
 
         <DataTemplate x:Key="DeadlineEditingColumnTemplate" DataType="mdl:Todo">
@@ -38,15 +38,15 @@
         </DataTemplate>
 
         <DataTemplate x:Key="IsDoneColumnTemplate" DataType="mdl:Todo">
-            <CheckBox IsChecked="{Binding IsDone}" />
+            <CheckBox IsChecked="{Binding IsDone}" Style="{StaticResource DataGridCheckBoxStyle}" />
         </DataTemplate>
 
         <DataTemplate x:Key="IsDoneEditingColumnTemplate" DataType="mdl:Todo">
-            <CheckBox IsChecked="{Binding IsDone}" />
+            <CheckBox IsChecked="{Binding IsDone}" Style="{StaticResource DataGridCheckBoxStyle}" />
         </DataTemplate>
 
         <DataTemplate x:Key="WarningLevelColumnTemplate" DataType="mdl:Todo">
-            <TextBlock Text="{Binding Converter={StaticResource TodoToContentConverter}}" />
+            <TextBlock Text="{Binding Converter={StaticResource TodoToContentConverter}}" Style="{StaticResource TextBlockStyle.Label}" />
         </DataTemplate>
 
         <Style x:Key="DataGridRow" TargetType="DataGridRow" BasedOn="{StaticResource DataGridRowStyle}">

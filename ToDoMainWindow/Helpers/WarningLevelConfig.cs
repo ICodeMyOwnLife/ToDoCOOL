@@ -10,7 +10,7 @@ namespace ToDoMainWindow.Helpers
     public class WarningLevelConfig
     {
         #region  Properties & Indexers
-        public WarningLevelBrushList BrushList { get; set; }
+        public WarningLevelBrushList BrushList { get; } = new WarningLevelBrushList();
         public WarningLevelBrush DefaultBrush { get; set; }
         #endregion
 
@@ -19,7 +19,7 @@ namespace ToDoMainWindow.Helpers
         public WarningLevelBrush GetWarningLevelBrush(Todo todo)
         {
             var remainingHours = (DateTime.Now - todo.Deadline).TotalHours;
-            return BrushList?.FirstOrDefault(b => b.Hours >= remainingHours) ?? DefaultBrush;
+            return BrushList?.FirstOrDefault(b => b.Hours <= remainingHours) ?? DefaultBrush;
         }
         #endregion
     }

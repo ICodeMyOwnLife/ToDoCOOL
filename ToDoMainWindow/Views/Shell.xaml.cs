@@ -10,3 +10,6 @@
         #endregion
     }
 }
+
+// TODO: DataGrid fails to add new row if there's currently no row
+// TODO: WarningLevelBrushes
