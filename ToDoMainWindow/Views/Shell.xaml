@@ -98,6 +98,9 @@
                     <DataGridTemplateColumn Header="Is done?" SortMemberPath="IsDone"
                                             CellTemplate="{StaticResource IsDoneColumnTemplate}"
                                             CellEditingTemplate="{StaticResource IsDoneEditingColumnTemplate}" />
+
+                    <DataGridTemplateColumn Header="Warning Level" SortMemberPath="Deadline"
+                                            CellTemplate="{StaticResource WarningLevelColumnTemplate}" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
