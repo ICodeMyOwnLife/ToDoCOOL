@@ -112,6 +112,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\DotNet\CB.Configuration\CB.Configuration.Common\CB.Configuration.Common.csproj">
+      <Project>{9f2166ae-f09b-49c1-9b6d-2ee861593a73}</Project>
+      <Name>CB.Configuration.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\..\Libraries\DotNet\CB.Model\CB.Model.Common\CB.Model.Common.csproj">
       <Project>{33a5df99-1312-4023-a6ef-eabb9848f5a6}</Project>
       <Name>CB.Model.Common</Name>

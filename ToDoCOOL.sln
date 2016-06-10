@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CB.Model.Serialization", ".
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CB.Xaml.AttachedProperties", "..\..\..\Libraries\DotNet\CB.Xaml\CB.Xaml.AttachedProperties\CB.Xaml.AttachedProperties.csproj", "{1CCB7F4E-228A-4A8E-A211-A032C9C8767B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CB.Configuration.Common", "..\..\..\Libraries\DotNet\CB.Configuration\CB.Configuration.Common\CB.Configuration.Common.csproj", "{9F2166AE-F09B-49C1-9B6D-2EE861593A73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{1CCB7F4E-228A-4A8E-A211-A032C9C8767B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CCB7F4E-228A-4A8E-A211-A032C9C8767B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CCB7F4E-228A-4A8E-A211-A032C9C8767B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F2166AE-F09B-49C1-9B6D-2EE861593A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F2166AE-F09B-49C1-9B6D-2EE861593A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F2166AE-F09B-49C1-9B6D-2EE861593A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F2166AE-F09B-49C1-9B6D-2EE861593A73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
