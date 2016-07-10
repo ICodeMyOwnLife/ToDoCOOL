@@ -2,10 +2,10 @@
                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                           xmlns:local="clr-namespace:ToDoMainWindow.Helpers;assembly=TodoMainWindow">
     <local:WarningLevelConfig.DefaultBrush>
-        <local:WarningLevelBrush Content="Normal" Background="#CCE2F7D7" />
+        <local:WarningLevelBrush Content="Normal" Background="#CCE2F7D7" Foreground="Black" />
     </local:WarningLevelConfig.DefaultBrush>
 
-    <local:WarningLevelBrush Content="Warning" Hours="0" Background="#7FFFD4D4" />
-    <local:WarningLevelBrush Content="Warning" Hours="2" Background="#7FF9F3C9" />
-    <local:WarningLevelBrush Content="Warning" Hours="24" Background="#7FDCD4FF" />
+    <local:WarningLevelBrush Content="Late" Hours="0" Background="#7FFFD4D4" Foreground="Red" />
+    <local:WarningLevelBrush Content="Almost late" Hours="2" Background="#7FF9F3C9" Foreground="Orange" />
+    <local:WarningLevelBrush Content="Upcoming" Hours="24" Background="#7FDCD4FF" Foreground="Blue" />
 </local:WarningLevelConfig>

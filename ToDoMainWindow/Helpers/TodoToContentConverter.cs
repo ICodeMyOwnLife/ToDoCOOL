@@ -5,11 +5,11 @@ using TodoModels;
 
 namespace ToDoMainWindow.Helpers
 {
-    public class TodoToBackgroundConverter: TodoValueConverterBase
+    public class TodoToContentConverter: TodoValueConverterBase
     {
         #region Override
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-            => GetBackground(value as Todo);
+            => GetContent(value as Todo);
         #endregion
     }
 }

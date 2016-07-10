@@ -4,25 +4,25 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
-                 xmlns:vmd="clr-namespace:TodoViewModels;assembly=TodoViewModels"
                  xmlns:dvm="clr-namespace:TodoViewModels.Design;assembly=TodoViewModels"
                  xmlns:mdl="clr-namespace:TodoModels;assembly=TodoModels"
                  xmlns:helpers="clr-namespace:ToDoMainWindow.Helpers"
                  xmlns:xaml="http://wpf.cb.com/xaml"
+                 xmlns:vmd="clr-namespace:TodoViewModels;assembly=TodoViewModels"
                  mc:Ignorable="d"
                  Title="Shell" Height="600" Width="800" Style="{StaticResource MetroWindowStyle}"
                  WindowStartupLocation="CenterScreen"
                  d:DataContext="{d:DesignInstance Type=dvm:TodoDesignViewModel, IsDesignTimeCreatable=True}">
 
     <Window.Resources>
-        <dvm:TodoDesignViewModel x:Key="MainViewModel" />
+        <vmd:TodoViewModel x:Key="MainViewModel" />
 
-        <helpers:TodoToBackgroundConverter x:Key="TodoToBackgroundConverter" />
+        <helpers:TodoToForegroundConverter x:Key="TodoToForegroundConverter" />
 
         <helpers:TodoToContentConverter x:Key="TodoToContentConverter" />
 
         <DataTemplate x:Key="ContentColumnTemplate" DataType="mdl:Todo">
-            <TextBlock Text="{Binding Content}" Style="{StaticResource TextBlockStyle.CenterAlign}" />
+            <TextBlock Text="{Binding Content}" Style="{StaticResource TextBlockStyle.LeftAlign}" />
         </DataTemplate>
 
         <DataTemplate x:Key="ContentEditingColumnTemplate" DataType="mdl:Todo">
@@ -30,7 +30,7 @@
         </DataTemplate>
 
         <DataTemplate x:Key="DeadlineColumnTemplate" DataType="mdl:Todo">
-            <TextBlock Text="{Binding Deadline, StringFormat={}{0:MM-dd-yyyy}}"
+            <TextBlock Text="{Binding Deadline, StringFormat={}{0:MM-dd-yyyy hh\\:mm}}"
                        Style="{StaticResource TextBlockStyle.CenterAlign}" />
         </DataTemplate>
 
@@ -52,7 +52,7 @@
         </DataTemplate>
 
         <Style x:Key="DataGridRow" TargetType="DataGridRow" BasedOn="{StaticResource DataGridRowStyle}">
-            <Setter Property="Background" Value="{Binding Converter={StaticResource TodoToBackgroundConverter}}" />
+            <Setter Property="Foreground" Value="{Binding Converter={StaticResource TodoToForegroundConverter}}" />
         </Style>
 
         <Style x:Key="DataGridRowHeader" TargetType="DataGridRowHeader"
@@ -68,10 +68,19 @@
         <StaticResource ResourceKey="MainViewModel" />
     </Window.DataContext>
 
+    <xaml:WindowServices.Initializer>
+        <xaml:WindowInitializer IsAsync="True" />
+    </xaml:WindowServices.Initializer>
+
+    <xaml:WindowServices.Terminator>
+        <xaml:WindowTerminator IsAsync="True" />
+    </xaml:WindowServices.Terminator>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
@@ -80,31 +89,36 @@
             <MenuItem Style="{StaticResource AccentMenuItemStyle}" />
         </Menu>
 
-        <Grid Grid.Row="1">
-            <DataGrid ItemsSource="{Binding TodosView}" CanUserAddRows="True" AutoGenerateColumns="False"
-                      RowStyle="{StaticResource DataGridRow}" RowHeaderStyle="{StaticResource DataGridRowHeader}"
-                      HeadersVisibility="All"
-                      xaml:DataGridServices.ShowRowNumber="True"
-                      xaml:DataGridServices.StartRowNumber="1">
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn Header="Content" SortMemberPath="Content"
-                                            CellTemplate="{StaticResource ContentColumnTemplate}"
-                                            CellEditingTemplate="{StaticResource ContentEditingColumnTemplate}" />
+        <DataGrid Grid.Row="1" ItemsSource="{Binding TodosCollection.CollectionView}" CanUserAddRows="True"
+                  AutoGenerateColumns="False"
+                  RowStyle="{StaticResource DataGridRow}" RowHeaderStyle="{StaticResource DataGridRowHeader}"
+                  HeadersVisibility="All"
+                  xaml:DataGridServices.ShowRowNumber="True"
+                  xaml:DataGridServices.StartRowNumber="1">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Content" SortMemberPath="Content" Width="*"
+                                        CellTemplate="{StaticResource ContentColumnTemplate}"
+                                        CellEditingTemplate="{StaticResource ContentEditingColumnTemplate}" />
 
-                    <DataGridTemplateColumn Header="Deadline" SortMemberPath="Deadline"
-                                            CellTemplate="{StaticResource DeadlineColumnTemplate}"
-                                            CellEditingTemplate="{StaticResource DeadlineEditingColumnTemplate}" />
+                <DataGridTemplateColumn Header="Deadline" SortMemberPath="Deadline" Width="160"
+                                        HeaderStyle="{StaticResource DataGridColumnHeaderStyle.CenterAlign}"
+                                        CellTemplate="{StaticResource DeadlineColumnTemplate}"
+                                        CellEditingTemplate="{StaticResource DeadlineEditingColumnTemplate}" />
 
-                    <DataGridTemplateColumn Header="Is done?" SortMemberPath="IsDone"
-                                            CellTemplate="{StaticResource IsDoneColumnTemplate}"
-                                            CellEditingTemplate="{StaticResource IsDoneEditingColumnTemplate}" />
+                <DataGridTemplateColumn Header="Is done?" SortMemberPath="IsDone" Width="80"
+                                        HeaderStyle="{StaticResource DataGridColumnHeaderStyle.CenterAlign}"
+                                        CellTemplate="{StaticResource IsDoneColumnTemplate}"
+                                        CellEditingTemplate="{StaticResource IsDoneEditingColumnTemplate}" />
 
-                    <DataGridTemplateColumn Header="Warning Level" SortMemberPath="Deadline"
-                                            CellTemplate="{StaticResource WarningLevelColumnTemplate}" />
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
+                <DataGridTemplateColumn Header="Warning Level" SortMemberPath="Deadline" Width="120"
+                                        HeaderStyle="{StaticResource DataGridColumnHeaderStyle.CenterAlign}"
+                                        CellTemplate="{StaticResource WarningLevelColumnTemplate}" />
+            </DataGrid.Columns>
+        </DataGrid>
 
-        <StatusBar Grid.Row="2" />
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button Content="Pull" Command="{Binding PullAsynCommand}" HorizontalAlignment="Right" />
+            <Button Content="Push" Command="{Binding PushAsynCommand}" HorizontalAlignment="Right" />
+        </StackPanel>
     </Grid>
 </mah:MetroWindow>
